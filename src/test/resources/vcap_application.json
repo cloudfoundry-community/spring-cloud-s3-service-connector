@@ -1,0 +1,13 @@
+{
+	"instance_id":"15c4eb02ccd6496e811344e0012defa1",
+	"instance_index":0,
+	"host":"0.0.0.0",
+	"port":41752,
+	"limits":{"mem":128,"disk":2048,"fds":16384},
+	"application_name":"my-app",
+	"application_uris":[],
+	"version":"c9a0d852-90ba-46be-b969-d2fa311532e6",
+	"name":"my-app",
+	"uris":[],
+	"users":null
+}

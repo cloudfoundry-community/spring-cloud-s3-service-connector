@@ -16,7 +16,7 @@ Add the library to your project:
 
 Bind an S3 service to your Cloud Foundry application.
 
-Use Spring Cloud to get an S3ServiceInfo instance.
+Use Spring Cloud to get an `S3ServiceInfo` instance.
 
 ```
 CloudFactory cloudFactory = new CloudFactory();

@@ -21,15 +21,14 @@ import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudFactory;
 import org.springframework.cloud.cloudfoundry.TestCloudFoundryConnector;
-import org.springframework.cloud.service.ServiceInfo;
 import org.springframework.cloud.util.EnvironmentAccessor;
 
 import com.google.common.base.Charsets;
@@ -61,10 +60,10 @@ public class S3ServiceInfoCreatorTest {
     public void s3ServicesAreAvailableThroughS3ServiceInfo() throws IOException {
         when(environment.getEnvValue("VCAP_SERVICES")).thenReturn(fileAsString("s3-service-info.json"));
 
-        List<ServiceInfo> serviceInfos = cloudConnector.getServiceInfos();
+        Cloud cloud = cloudFactory.getCloud();
 
-        assertThat(serviceInfos.size(), is(1));
-        S3ServiceInfo serviceInfo = (S3ServiceInfo) cloudFactory.getCloud().getServiceInfo("my-s3-service");
+        assertThat(cloud.getServiceInfos().size(), is(1));
+        S3ServiceInfo serviceInfo = (S3ServiceInfo) cloud.getServiceInfo("my-s3-service");
         assertThat(serviceInfo.getId(), is("my-s3-service"));
         assertThat(serviceInfo.getAccessKeyId(), is("my-access-key-id"));
         assertThat(serviceInfo.getSecretAccessKey(), is("my-secret-key"));

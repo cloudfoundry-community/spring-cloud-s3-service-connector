@@ -4,7 +4,34 @@
 	<groupId>org.cloudfoundry.community</groupId>
 	<artifactId>spring-cloud-s3-service-connector</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+	<name>Spring Cloud Service Connector for Amazon S3 Services</name>
+	<description>This project provides a Spring Cloud service connector for Amazon S3 services brokered by the Cloud Foundry s3-cf-service-broker.</description>
 
+	<organization>
+		<name>Cloud Foundry Community</name>
+		<url>https://github.com/cloudfoundry-community</url>
+	</organization>
+
+	<inceptionYear>2015</inceptionYear>
+	<developers>
+		<developer>
+			<name>David Ehringer</name>
+			<organizationUrl>https://github.com/davidehringer</organizationUrl>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	
+	<scm>
+		<connection>scm:git:https://github.com/cloudfoundry-community/spring-cloud-s3-service-connector.git</connection>
+		<developerConnection>scm:git:https://github.com/cloudfoundry-community/spring-cloud-s3-service-connector.git</developerConnection>
+		<url>https://github.com/cloudfoundry-community/spring-cloud-s3-service-connector.git</url>
+	</scm>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

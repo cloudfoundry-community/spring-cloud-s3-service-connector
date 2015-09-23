@@ -27,3 +27,7 @@ S3ServiceInfo serviceInfo = (S3ServiceInfo) cloud.getServiceInfo("my-s3-service"
 ...  serviceInfo.getSecretAccessKey();
 ...  serviceInfo.getBucket();
 ```
+
+## Continuous Integration
+
+The CI server for the project is hosted at https://gaptap.atlassian.net/builds/browse/CFC-SPRIN.

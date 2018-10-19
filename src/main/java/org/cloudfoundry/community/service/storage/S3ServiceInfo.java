@@ -20,38 +20,45 @@ import org.springframework.cloud.service.ServiceInfo;
 
 /**
  * {@link ServiceInfo} for Amazon S3 services.
- * 
+ *
  * @author David Ehringer
  */
 public class S3ServiceInfo extends BaseServiceInfo {
 
-    private final String username;
-    private final String accessKeyId;
-    private final String secretAccessKey;
-    private final String bucket;
+   private final String username;
+   private final String accessKeyId;
+   private final String secretAccessKey;
+   private final String bucket;
+   private final String region;
 
-    public S3ServiceInfo(String id, String username, String accessKeyId, String secretAccessKey, String bucket) {
-        super(id);
-        this.username = username;
-        this.accessKeyId = accessKeyId;
-        this.secretAccessKey = secretAccessKey;
-        this.bucket = bucket;
-    }
+   public S3ServiceInfo(final String id, final String username, final String accessKeyId, final String secretAccessKey, final String bucket,
+         final String region) {
+      super(id);
+      this.username = username;
+      this.accessKeyId = accessKeyId;
+      this.secretAccessKey = secretAccessKey;
+      this.bucket = bucket;
+      this.region = region;
+   }
 
-    public String getUsername() {
-        return username;
-    }
+   public String getUsername() {
+      return username;
+   }
 
-    public String getAccessKeyId() {
-        return accessKeyId;
-    }
+   public String getAccessKeyId() {
+      return accessKeyId;
+   }
 
-    public String getSecretAccessKey() {
-        return secretAccessKey;
-    }
+   public String getSecretAccessKey() {
+      return secretAccessKey;
+   }
 
-    public String getBucket() {
-        return bucket;
-    }
+   public String getBucket() {
+      return bucket;
+   }
+
+   public String getRegion() {
+      return region;
+   }
 
 }

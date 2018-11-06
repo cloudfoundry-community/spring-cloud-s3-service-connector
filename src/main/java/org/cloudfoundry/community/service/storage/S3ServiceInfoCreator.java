@@ -22,27 +22,29 @@ import org.springframework.cloud.cloudfoundry.Tags;
 
 /**
  * An internal service provider for creating S3ServiceInfo instances.
- * 
+ *
  * @author David Ehringer
  */
 public class S3ServiceInfoCreator extends CloudFoundryServiceInfoCreator<S3ServiceInfo> {
 
-    public S3ServiceInfoCreator() {
-        super(new Tags("s3"));
-    }
+   public S3ServiceInfoCreator() {
+      super(new Tags("s3"));
+   }
 
-    public S3ServiceInfo createServiceInfo(Map<String, Object> serviceData) {
-        String id = (String) serviceData.get("name");
+   @Override
+   public S3ServiceInfo createServiceInfo(final Map<String, Object> serviceData) {
+      final String id = (String) serviceData.get("name");
 
-        @SuppressWarnings("unchecked")
-        Map<String, Object> credentials = (Map<String, Object>) serviceData.get("credentials");
+      @SuppressWarnings("unchecked")
+      final Map<String, Object> credentials = (Map<String, Object>) serviceData.get("credentials");
 
-        String username = (String) credentials.get("username");
-        String accessKeyId = (String) credentials.get("access_key_id");
-        String secretAccessKey = (String) credentials.get("secret_access_key");
-        String bucket = (String) credentials.get("bucket");
+      final String username = (String) credentials.get("username");
+      final String accessKeyId = (String) credentials.get("access_key");
+      final String secretAccessKey = (String) credentials.get("secret_access_key");
+      final String bucket = (String) credentials.get("bucket");
+      final String region = (String) credentials.get("region");
 
-        return new S3ServiceInfo(id, username, accessKeyId, secretAccessKey, bucket);
-    }
+      return new S3ServiceInfo(id, username, accessKeyId, secretAccessKey, bucket, region);
+   }
 
 }
